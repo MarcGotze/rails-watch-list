@@ -1,4 +1,4 @@
-<%= render "navbar" %>
+<%= render "partials/navbar" %>
 
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)">
   <h1>Save any kinds of movies</h1>
@@ -11,6 +11,10 @@
   </div>
 </div>
 
-<div class="container">
-  <%= @lists.each  %>
+<div class="container list-container">
+  <% @lists.each do |list| %>
+    <div class="card-list">
+      <li><%= link_to list.name, list_path(list), class: "badge badge-dark" %></li>
+    </div>
+  <% end %>
 </div>

@@ -1,0 +1,21 @@
+<%= render "partials/navbar" %>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1779&q=80)">
+  <h1><%= @list.name %></h1>
+</div>
+
+<div class="container">
+  <div id="lists">
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-gradient" %>
+  </div>
+
+  <% if @list.bookmarks.any? %>
+    <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.tmdb.org/t/p/w500/<%= bookmark.movie.poster_url %>)">
+        <%= bookmark.movie.title %>
+      </div>
+    <% end %>
+    </div>
+<% end %>
+</div>
