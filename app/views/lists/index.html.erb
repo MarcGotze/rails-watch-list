@@ -12,8 +12,8 @@
 
 <div class="container list-container">
   <% @lists.each do |list| %>
-    <div class="card-list">
-      <li><%= link_to list.name, list_path(list), class: "card-list-item" %></li>
+    <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fit %>')">
+      <li><%= link_to list.name, list_path(list)%></li>
     </div>
   <% end %>
 </div>
