@@ -11,6 +11,7 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 .btn-gradient {
@@ -37,16 +38,20 @@
 .card-list {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  height: 75px;
+  height: 300px;
+  width: 300px;
   color: white;
   background-color: black;
   border-radius: 25px;
-  box-shadow: 2px 2px 5px rgb(160, 160, 160);
+  box-shadow: 3px 3px 5px rgb(160, 160, 160);
+  margin-bottom: 50px;
   li {
     list-style: none;
   }
   a {
+    color: white;
     font-size: 28px;
     text-decoration: none;
   }
@@ -58,44 +63,21 @@
   gap: 20px;
 }
 
-.cards {
-  margin: 50px 0px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.cover-img {
+  object-fit: cover;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+.star {
+  padding-top: 4px;
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+.btn-movie {
+  color: white;
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.card {
+  max-width: 500px !important;
 }
