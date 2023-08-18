@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
   before_action :set_list, only: %i[new create]
 
   def new
-    @bookmark = @list.bookmarks.new
+    @bookmark = Bookmark.new
     @movies = Movie.all
   end
 
@@ -13,6 +13,12 @@ class BookmarksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    redirect_to list_path(@bookmark.list)
   end
 
   private
